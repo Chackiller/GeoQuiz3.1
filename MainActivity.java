@@ -91,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
             mTextView2.setText("Ваш результат: " + mResult + " правильних відповідей з " + questionBank.length + ". Ви змахлювали " + mCheatedIndex + " раз");
             mResult = 0;
             mResultFalse = 0;
+            mCheatedIndex = 0;
+           mNextButton.setText(R.string.restart);
        }
         Toast.makeText(MainActivity.this,text,Toast.LENGTH_LONG).show();
     }
@@ -137,6 +139,8 @@ public class MainActivity extends AppCompatActivity {
         mCurrentIndex = (mCurrentIndex + 1) % questionBank.length;
         mCanPressButton = false;
         setCanPressButton(false);
+        mTextView2.setText(" ");
+        mNextButton.setText(R.string.next_button);
         updateQuestion();
     }
 
